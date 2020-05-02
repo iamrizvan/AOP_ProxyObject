@@ -8,6 +8,7 @@ public class ElectricCar {
 		System.out.println("Electric car is running on the road now a days.");
 	}
 
+	// @Deprecated
 	public void recharge(Battery battery) {
 		System.out.println("Car's battery has been recharged completly.");		
 	}
