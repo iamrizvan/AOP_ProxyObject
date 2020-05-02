@@ -7,14 +7,13 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class Diagnose {
 
-	//@Pointcut("bean(petrolCar)")
-	@Pointcut("bean(*Car)")
-	public void beanPointcut() {};
+	@Pointcut("args(Deprecated)")
+	public void argsPointcut() {};
 	
-	@Before("beanPointcut()")
-	public void beanAdvice()
+	@Before("argsPointcut()")
+	public void argsAdvice()
 	{
-	System.out.println("bean pointcut advice message");	
+	System.out.println("args pointcut advice message");	
 	}
 
 	
