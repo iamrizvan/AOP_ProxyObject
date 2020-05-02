@@ -10,7 +10,7 @@ public class App {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 		Machine cars = context.getBean("petrolCar", Machine.class);
-		cars.run(100);
+		cars.run();
 		context.close();
 
 	}

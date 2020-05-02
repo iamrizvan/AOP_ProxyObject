@@ -7,15 +7,24 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class Diagnose {
 
-	@Pointcut("execution(void run(..))")
-	public void pointcut() {}
+//	@Pointcut("target(org.studyeasy.cars.PetrolCar)")
+	@Pointcut("target(org.studyeasy.machine.Machine)")
+	public void targetPointcut() {};
 	
-	@Before("pointcut()")
-	public void beforeAdvice()
+	@Before("targetPointcut()")
+	public void targetAdvice()
 	{
-	System.out.println("Before advice message");
-		
+	System.out.println("target advice message");	
 	}
 
+	@Pointcut("this(org.studyeasy.cars.PetrolCar)")
+	public void thisPointcut() {}
+	
+	@Before("thisPointcut()")
+	public void thisAdvice()
+	{
+	System.out.println("this advice message");	
+	}
+	
 	
 }
